@@ -1,0 +1,31 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.8.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.in28minutes.spring.basics'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'	// For enabling monitoring on application metrics, health and info
+	implementation 'org.springframework.data:spring-data-rest-hal-browser'	// For enabling HAL browser facility to test actuator features	
+	implementation 'org.springframework.boot:spring-boot-devtools'	// For loading only the code changes by refreshing application beans (user defined) without restart of application
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'	
+}
