@@ -20,6 +20,6 @@ public class BooksController {
 
 	@GetMapping("/books")
 	public List<Book> getAllBooks(){
-		return Arrays.asList(new Book(1l,"Mastering Spring 5.1","Michael"));
+		return Arrays.asList(new Book(1l,"Mastering Spring 5.1","Michael Raj"));
 	}
 }
